@@ -1,0 +1,13 @@
+choice DISPLAY_COLOR_MODE
+    bool "Color Mode"
+    default DISPLAY_COLOR_MODE_BGR
+    config DISPLAY_COLOR_MODE_BGR
+        bool "Blue,Green,Red"
+    config DISPLAY_COLOR_MODE_RGB
+        bool "Red,Green,Blue"
+endchoice
+
+config DISPLAY_COLOR_MODE
+    int
+    default 1 if DISPLAY_COLOR_MODE_BGR
+    default 0 if DISPLAY_COLOR_MODE_RGB

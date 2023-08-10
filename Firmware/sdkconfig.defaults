@@ -1,0 +1,2 @@
+# ILI9488 uses 18 bit color mode and requires 16bit LVGL color depth.
+CONFIG_LV_COLOR_DEPTH_16=y
