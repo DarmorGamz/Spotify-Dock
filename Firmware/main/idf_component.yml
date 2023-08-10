@@ -1,0 +1,7 @@
+## IDF Component Manager Manifest File
+dependencies:
+  idf:
+    version: ">=4.1.0"
+  lvgl/lvgl: ">=8.0.0"
+  esp_lcd_ili9488:
+    git: https://github.com/DarmorGamz/esp_lcd_ili9488.git
