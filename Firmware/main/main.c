@@ -1,9 +1,3 @@
-/*
- * SPDX-FileCopyrightText: 2022 atanisoft (github.com/atanisoft)
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <driver/gpio.h>
 #include <driver/ledc.h>
 #include <driver/spi_master.h>
