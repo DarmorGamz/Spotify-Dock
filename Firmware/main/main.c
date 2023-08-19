@@ -22,6 +22,8 @@
 #include <stdio.h>
 #include "sdkconfig.h"
 
+#include "Wifi.h"
+
 // ESP PINS
 #define LCD_PIN_BKL 14
 #define LCD_PIN_DC 8
@@ -48,7 +50,7 @@ static const int SPI_MAX_TRANSFER_SIZE = DISPLAY_HORIZONTAL_PIXELS * 80 * sizeof
 
 // Default to 25 lines of color data
 static const size_t LV_BUFFER_SIZE = DISPLAY_HORIZONTAL_PIXELS * 50;
-static const int LVGL_UPDATE_PERIOD_MS = 1;
+static const int LVGL_UPDATE_PERIOD_MS = 5;
 
 static const ledc_mode_t BACKLIGHT_LEDC_MODE = LEDC_LOW_SPEED_MODE;
 static const ledc_channel_t BACKLIGHT_LEDC_CHANNEL = LEDC_CHANNEL_0;
@@ -222,6 +224,8 @@ void initialize_lvgl() {
 
 
 void app_main() {
+    // Initalize Wifi.
+    if (Wifi_Init() != ESP_OK) { ESP_LOGI(TAG, "Wifi failed to initalize."); }
     display_brightness_init();
     display_brightness_set(0);
     initialize_spi();
@@ -229,6 +233,8 @@ void app_main() {
     initialize_lvgl();
     display_brightness_set(100);
 
+    // Start Wifi.
+    if (Wifi_Start() != ESP_OK) { ESP_LOGI(TAG, "Wifi failed to start."); }
 
     lv_demo_music();
     while (1) {
