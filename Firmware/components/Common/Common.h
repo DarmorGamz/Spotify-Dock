@@ -17,6 +17,13 @@ extern "C" {
 
 
 /** COMMON CONSTANT DEFINITIONS ***********************************************/
+#define LCD_PIN_BKL 14
+#define LCD_PIN_DC 8
+#define LCD_PIN_RST 9
+#define LCD_PIN_CS 10
+#define LCD_PIN_SCK 12
+#define LCD_PIN_MISO 13
+#define LCD_PIN_MOSI 11
 
 
 /** COMMON MACRO DEFINITIONS **************************************************/
