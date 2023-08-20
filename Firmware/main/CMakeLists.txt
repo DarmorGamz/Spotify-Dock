@@ -1,1 +1,1 @@
-idf_component_register(SRCS main.c REQUIRES Wifi driver freertos esp_lcd esp_timer)
+idf_component_register(SRCS main.c REQUIRES Common Wifi Display)
